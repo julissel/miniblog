@@ -9,8 +9,20 @@
     {% endif %}
 </head>
 <body>
-    <div>Miniblog: <a href="/index">Home</a> </div>
+    <div>Miniblog:
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
     <hr>
+    {% with message = get_flashed_message() %}
+    {% if message %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
 </body>
 </html>
