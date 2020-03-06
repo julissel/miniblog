@@ -1,5 +1,4 @@
 import os
-from typing import Any, Union
 
 
 class Config(object):
