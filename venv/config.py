@@ -1,6 +1,5 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-#'/home/julia/PycharmProjects/miniblog'
 
 
 class Config(object):
