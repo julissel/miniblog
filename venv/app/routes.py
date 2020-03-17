@@ -107,12 +107,12 @@ def follow(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
         flash('User {} not found.'.format(username))
-        return redirect((url_for('index')))
+        return redirect(url_for('index'))
     if user == current_user:
         flash('You cannot follow yourself!')
         return redirect(url_for('user', username=username))
     current_user.follow(user)
-    db.commit()
+    db.session.commit()
     flash('You are following {}!'.format(username))
     return redirect(url_for('user', username=username))
 
