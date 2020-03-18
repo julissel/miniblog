@@ -20,21 +20,8 @@ def index():
         db.session.commit()
         flash('You added new post!')
         return redirect(url_for('index'))
-    posts = [
-        {
-            'author': {'username': 'Anna'},
-            'body': 'How to create chocolate cake'
-        },
-        {
-            'author': {'username': 'Kate'},
-            'body': 'New tasty bread'
-        },
-        {
-            'author': {'username': 'Angela'},
-            'body': 'Easy way to make jam'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    posts = current_user.followed_posts().all()
+    return render_template('index.html', title='Home', form=form, posts=posts)
 
 
 @app.route('/login', methods=['GET', 'POST'])
