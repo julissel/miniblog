@@ -13,3 +13,4 @@ class Config(object):
     MAIL_PASSWORD = 'admin_pass' # input real password
     ADMINS = ['admin@example.com'] # input real email
     POSTS_PER_PAGE = 3
+    LANGUAGES = ['en', 'ru']
