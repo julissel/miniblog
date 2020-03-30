@@ -13,4 +13,6 @@ class Config(object):
     MAIL_PASSWORD = 'admin_pass' # input real password
     ADMINS = ['admin@example.com'] # input real email
     POSTS_PER_PAGE = 3
-    LANGUAGES = ['en', 'ru']
+    LANGUAGES = ['en', 'ru'] #for new message.pot run in terminal: pybabel extract -F babel.cfg -k _l -o messages.pot .
+    #for creatin directory for translation run in terminal: pybabel init -i messages.pot -d app/translations -l ru
+    #for using translations compile in terminal: pybabel compile -d app/translations

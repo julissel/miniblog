@@ -11,7 +11,7 @@
                     {{ post.author.username }}
                 </a>
             {% endset %}
-            {{ _('(username)s says %(when)s',
+            {{ _('%(username)s says %(when)s',
                 username=user_link, when=moment(post.timestamp).fromNow()) }}
             <br>
             {{ post.body }}
